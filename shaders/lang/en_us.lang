@@ -1,0 +1,17 @@
+option.LEGACY360 = Legacy360
+option.GAMMA = Gamma
+option.VERSION = Version
+value.VERSION.0 = v1.0
+
+value.LEGACY360.0 = Made By Recko
+value.GAMMA.1.0 = Bright
+value.GAMMA.0.0 = Moody
+
+option.BRIGHTNESS = Brightness
+option.SATURATION = Saturation
+option.CONTRAST = Contrast
+suffix.BRIGHTNESS = %
+suffix.SATURATION = %
+suffix.CONTRAST = %
+
+suffix.GAMMA = %
