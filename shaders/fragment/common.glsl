@@ -10,6 +10,7 @@ uniform float alphaTestRef = 0.1;
 in vec2 lmcoord;
 in vec2 texcoord;
 in vec4 glcolor;
+in vec3 normal;
 
 /* RENDERTARGETS: 0,3 */
 layout(location = 0) out vec4 color;
@@ -22,6 +23,9 @@ void main() {
 	if (color.a < alphaTestRef) {
 		discard;
 	}
+	color.a = clamp(color.a, 0.75, 1.0);
 
+	vec3 finalNormal = normal * 0.5 + 0.5;
+	color.rgb *= clamp(finalNormal.y+(finalNormal.z/5), 0.5, 1.0);
 	aoBuffer = vec4(vec3(0.0), clamp(pow(glcolor.a, 1+((GAMMA/100)*0.4)), 0.0, 1.0));
 }

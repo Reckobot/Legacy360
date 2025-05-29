@@ -25,6 +25,6 @@ void main() {
 	}
 
 	vec3 finalNormal = normal * 0.5 + 0.5;
-	color.rgb *= clamp(finalNormal.y+(finalNormal.z/4), 0.5, 1.0);
+	color.rgb *= clamp(finalNormal.y+(finalNormal.z/5), 0.5, 1.0);
 	aoBuffer = vec4(vec3(0.0), clamp(pow(glcolor.a, 1+((GAMMA/100)*0.4)), 0.0, 1.0));
 }
