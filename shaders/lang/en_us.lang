@@ -1,7 +1,7 @@
 option.LEGACY360 = Legacy360
 option.GAMMA = Gamma
 option.VERSION = Version
-value.VERSION.0 = v1.0
+value.VERSION.0 = v1.1
 
 value.LEGACY360.0 = Made By Recko
 value.GAMMA.1.0 = Bright

@@ -7,7 +7,10 @@ out vec4 glcolor;
 out vec3 normal;
 out vec2 lmcoord;
 
+in vec2 mc_Entity;
+
 flat out int isLight;
+flat out int isGrass;
 
 void main() {
 	gl_Position = ftransform();
@@ -20,6 +23,12 @@ void main() {
 		isLight = 1;
 	} else {
 		isLight = 0;
+	}
+
+	if(mc_Entity.x == 1) {
+		isGrass = 1;
+	} else {
+		isGrass = 0;
 	}
 
 	normal = gl_NormalMatrix * gl_Normal;

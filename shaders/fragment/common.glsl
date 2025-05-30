@@ -13,6 +13,7 @@ in vec4 glcolor;
 in vec3 normal;
 
 flat in int isLight;
+flat in int isGrass;
 
 /* RENDERTARGETS: 0,3 */
 layout(location = 0) out vec4 color;
@@ -21,9 +22,11 @@ layout(location = 1) out vec4 aoBuffer;
 void main() {
 	color = texture(gtexture, texcoord) * glcolor;
 
-	if ((bool(isLight))) {
-		vec3 finalNormal = normal * 0.5 + 0.5;
-		color.rgb *= clamp(finalNormal.y+(abs(finalNormal.z-0.5)*0.5), 0.5, 1.0);
+	if (!bool(isGrass)) {
+		if ((bool(isLight))) {
+			vec3 finalNormal = normal * 0.5 + 0.5;
+			color.rgb *= clamp(finalNormal.y+(abs(finalNormal.z-0.5)*0.5), 0.5, 1.0);
+		}
 	}
 
 	color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
