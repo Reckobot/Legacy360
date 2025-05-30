@@ -19,7 +19,7 @@ void main() {
 	lmcoord = (gl_TextureMatrix[1] * gl_MultiTexCoord1).xy;
 	lmcoord = (lmcoord * 33.05 / 32.0) - (1.05 / 32.0);
 
-	if(lmcoord.r < 0.9) {
+	if(lmcoord.r < 0.95) {
 		isLight = 1;
 	} else {
 		isLight = 0;
