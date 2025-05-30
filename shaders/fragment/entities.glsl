@@ -20,7 +20,7 @@ void main() {
 	color = texture(gtexture, texcoord) * glcolor;
 
 	vec3 finalNormal = normal * 0.5 + 0.5;
-	color.rgb *= clamp(finalNormal.y+(abs(finalNormal.z-0.5)*0.5), 0.5, 1.0);
+	color.rgb *= clamp(finalNormal.y+(abs(finalNormal.z-0.5)*0.5), 0.625, 1.0);
 
 	color.rgb = mix(color.rgb, entityColor.rgb, entityColor.a);
 	color *= clamp(pow(texture(lightmap, lmcoord), vec4(3.3)), 0.01, 1.0);

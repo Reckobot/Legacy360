@@ -54,6 +54,6 @@ void main() {
 			}
 		}
 		color.rgb = pow(color.rgb, vec3(1-((GAMMA/100)*0.4)));
-		color.rgb = BSC(color.rgb, BRIGHTNESS/100, SATURATION/100, CONTRAST/100);
+		color.rgb = BSC(color.rgb, float(BRIGHTNESS)/float(100), float(SATURATION)/float(100), float(CONTRAST)/float(100));
 	}
 }

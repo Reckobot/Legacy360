@@ -25,7 +25,7 @@ void main() {
 	if (!bool(isGrass)) {
 		if ((bool(isLight))) {
 			vec3 finalNormal = normal * 0.5 + 0.5;
-			color.rgb *= clamp(finalNormal.y+(abs(finalNormal.z-0.5)*0.5), 0.5, 1.0);
+			color.rgb *= clamp(finalNormal.y+(abs(finalNormal.z-0.5)*0.5), 0.625, 1.0);
 		}
 	}
 
